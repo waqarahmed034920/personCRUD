@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <title>Tasks CRUD</title>
 </head>
-<body class="container-fluid">
+<body class="container-fluid" onload="pageLoad()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -21,9 +21,47 @@
     </nav>
     <h3>Tasks CRUD operations</h3>
 
+    <div class="card-body">
+        <form>
+            <div class="form-group row">
+                <label for="id" class="col-sm-2 col-form-label">Id</label>
+                <input type="text" class="col-3 form-control" name="Id" id="Id">
+                <label for="task" class="col-sm-2 col-form-label">Task</label>
+                <input type="text" class="col-3 form-control" name="task" id="task">
+             </div>
+             <div class="form-group row">
+                 <label for="descripition" class="col-sm-2 col-form-label">Descripition</label>
+                 <input type="text" class="col-3 form-control" name="descripition" id="descripition">
+                 <label for="status" class="col-sm-2 col-form-label">Status</label>
+                 <input type="text" class="col-3 form-control" name="status" id="status">
+             </div>
+             <div  class="form-group row">
+                 <div class="offset-sm-2">
+                     <button id="btnSave" type="button" class="btn btn-info"  onclick="Savetask()">Save</button>
+                     <button id="btnUpdate" type="button" class="btn btn-danger"  onclick="updatetask()">Update</button>
+                 </div>
+             </div>
+        </form>    
+    </div>
+ 
+    <hr>
+
+    <table class="table table-striped table-sm table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Task</th>
+                <th>Description</th>
+                <th>status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="datagrid">
+
+        </tbody>
+    </table>
     
-
-
     <script src="/public/tasks.js"></script>
 </body>
 </html>

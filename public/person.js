@@ -42,6 +42,10 @@ function onEditClick(person) {
 }
 
 function SavePerson() {
+    if(person == "" || person == null){
+        alert("please fill this form")
+        return false;
+    }
     var person = {
         id: document.getElementById('Id').value,
         firstName: document.getElementById('firstName').value,
